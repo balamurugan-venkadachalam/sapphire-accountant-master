@@ -7,7 +7,7 @@ var authenticationModule = angular.module('myApp.country', ['myApp']);
 authenticationModule.config(['$routeProvider', function($routeProvider) {
   $routeProvider
   .when('/country', {
-    templateUrl: 'partials/admin/country/country_orgin.html',
+    templateUrl: 'partials/admin/country/country_origin.html',
     controller: 'CountryCtrl'
   });
   

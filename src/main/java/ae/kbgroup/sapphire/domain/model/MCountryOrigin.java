@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Entity
 @Table(name="m_country_orgin")
-@NamedQuery(name="MCountryOrgin.findAll", query="SELECT m FROM MCountryOrgin m")
+@NamedQuery(name="MCountryOrigin.findAll", query="SELECT m FROM MCountryOrigin m")
 public class MCountryOrigin implements Serializable {
 	private static final long serialVersionUID = 1L;
 

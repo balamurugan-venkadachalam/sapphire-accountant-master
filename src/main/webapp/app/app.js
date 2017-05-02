@@ -17,6 +17,7 @@ var app = angular.module('myApp', [
     , 'myApp.login'
     , 'myApp.category'
     , 'myApp.pack'
+    , 'myApp.country'
     , 'messageHandler.module'
     , 'myApp.services'
     , 'ui.bootstrap'
