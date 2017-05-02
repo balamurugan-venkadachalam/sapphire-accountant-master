@@ -37,19 +37,19 @@ public class AdminController {
 		adminService.updateCategory(category);
 	}
 	
-	@GetMapping("/countryOrgines")
+	@GetMapping("/countryOrigins")
 	public List<MCountryOrigin> getCountryOrgins(){
 		return adminService.findAllCountryOrigin();
 	}
 	
-	@PostMapping("/countryOrgin")
-	public void saveCountryOrgin(@RequestBody MCountryOrigin countryOrgin){
-		adminService.createCountryOrigin(countryOrgin);
+	@PostMapping("/countryOrigin")
+	public void saveCountryOrgin(@RequestBody MCountryOrigin countryOrigin){
+		adminService.createCountryOrigin(countryOrigin);
 	}
 	
-	@PutMapping("/countryOrgin")
-	public void updateCountryOrgin(@RequestBody MCountryOrigin countryOrgin){
-		adminService.updateCountryOrigin(countryOrgin);
+	@PutMapping("/countryOrigin")
+	public void updateCountryOrigin(@RequestBody MCountryOrigin countryOrigin){
+		adminService.updateCountryOrigin(countryOrigin);
 	}
 	
 	@GetMapping("/packs")

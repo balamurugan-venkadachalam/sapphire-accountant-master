@@ -22,15 +22,15 @@ authenticationModule.factory('CountryRequest', ['$http', 'restURL', function ($h
     return {
         getAll: function () {
         	
-            return $http.get(baseUrl + "/countrys");
+            return $http.get(baseUrl + "/countryOrigins");
         },
         create: function (country) {
 
-            return $http.post(baseUrl + "/country", country);
+            return $http.post(baseUrl + "/countryOrigin", country);
         },
         update: function (country) {
 
-            return $http.put(baseUrl + "/country", country);
+            return $http.put(baseUrl + "/countryOrigin", country);
         }
     };
     
