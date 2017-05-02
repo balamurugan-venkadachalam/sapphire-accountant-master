@@ -1,0 +1,12 @@
+<div ng-repeat="success in message.successs" ng-show="message.successs.length > 0" class="alert alert-success">
+    {{ success.message}}
+</div>
+<div ng-repeat="error in message.errors" ng-show="message.errors.length > 0" class="alert alert-danger">
+    {{error.message}}
+</div>
+<div ng-repeat="warn in message.warns" ng-show="message.warns.length > 0" class="alert alert-warning">
+    {{warn.message}}
+</div>
+<div ng-repeat="serverError in message.serverErrors" ng-show="message.serverErrors.length > 0" class="alert alert-danger">
+    {{serverError.message}}
+</div>

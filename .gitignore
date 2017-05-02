@@ -51,4 +51,7 @@ Temporary Items
 .nb-gradle/
 bin/
 build/
-outs/
+out/
+.classpath
+.project
+.settings/
