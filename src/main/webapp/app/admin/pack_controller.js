@@ -1,6 +1,6 @@
 'use strict';
 
-var authenticationModule = angular.module('myApp.admin', ['myApp']);
+var authenticationModule = angular.module('myApp.pack', ['myApp']);
 
 //angular.module('myApp.login', ['ngRoute'])
 
@@ -87,7 +87,7 @@ authenticationModule.controller('PackCtrl', [ 'PackRequest','$scope',  'MessageH
 	 };
      
 
-	 $scope.loadCategories();
+	 $scope.loadPacks();
 }]);
 
 

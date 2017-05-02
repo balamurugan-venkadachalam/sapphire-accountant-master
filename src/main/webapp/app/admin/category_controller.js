@@ -1,6 +1,6 @@
 'use strict';
 
-var authenticationModule = angular.module('myApp.admin', ['myApp']);
+var authenticationModule = angular.module('myApp.category', ['myApp']);
 
 //angular.module('myApp.login', ['ngRoute'])
 
