@@ -33,7 +33,7 @@ authenticationModule.controller('PackCtrl', [ 'PackRequest','$scope',  'MessageH
          }
 	 };
 	 
-	 $scope.updatePacks = function(pack){
+	 $scope.updatePack = function(pack){
          try {
              $scope.requests = [];
              PackRequest.update(pack).then(
