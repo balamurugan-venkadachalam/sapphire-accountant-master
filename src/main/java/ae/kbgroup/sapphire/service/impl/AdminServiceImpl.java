@@ -9,15 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ae.kbgroup.sapphire.domain.model.MCategory;
-import ae.kbgroup.sapphire.domain.model.MCountryOrgin;
+import ae.kbgroup.sapphire.domain.model.MCountryOrigin;
 import ae.kbgroup.sapphire.domain.model.MPack;
 import ae.kbgroup.sapphire.domain.model.MProduct;
 import ae.kbgroup.sapphire.domain.repository.CategoryRepository;
-import ae.kbgroup.sapphire.domain.repository.CountryOrginRepository;
+import ae.kbgroup.sapphire.domain.repository.CountryOriginRepository;
 import ae.kbgroup.sapphire.domain.repository.PackRepository;
 import ae.kbgroup.sapphire.domain.repository.ProductRepository;
 import ae.kbgroup.sapphire.exception.CategoryNotFound;
-import ae.kbgroup.sapphire.exception.CountryOrginNotFound;
+import ae.kbgroup.sapphire.exception.CountryOriginNotFound;
 import ae.kbgroup.sapphire.service.AdminService;
 
 @Service
@@ -27,7 +27,7 @@ public class AdminServiceImpl implements AdminService{
 	private CategoryRepository categoryRepository;
 	
 	@Autowired
-	private CountryOrginRepository countryOrginRepository;
+	private CountryOriginRepository countryOriginRepository;
 	
 	@Autowired
 	private PackRepository packRepository;
@@ -62,29 +62,29 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public MCountryOrgin createCountryOrgin(MCountryOrgin countryOrgin) {
-		return countryOrginRepository.save(countryOrgin);
+	public MCountryOrigin createCountryOrigin(MCountryOrigin countryOrgin) {
+		return countryOriginRepository.save(countryOrgin);
 	}
 
 	@Override
-	public void deleteCountryOrgin(long id) throws CountryOrginNotFound {
-		countryOrginRepository.delete(id);
+	public void deleteCountryOrigin(long id) throws CountryOriginNotFound {
+		countryOriginRepository.delete(id);
 		
 	}
 
 	@Override
-	public List<MCountryOrgin> findAllCountryOrgin() {
-		return countryOrginRepository.findAll();
+	public List<MCountryOrigin> findAllCountryOrigin() {
+		return countryOriginRepository.findAll();
 	}
 
 	@Override
-	public MCountryOrgin updateCountryOrgin(MCountryOrgin countryOrgin) throws CountryOrginNotFound {
-		return countryOrginRepository.save(countryOrgin);
+	public MCountryOrigin updateCountryOrigin(MCountryOrigin countryOrgin) throws CountryOriginNotFound {
+		return countryOriginRepository.save(countryOrgin);
 	}
 
 	@Override
-	public MCountryOrgin findByIdCountryOrgin(long id) {
-		return countryOrginRepository.findOne(id);
+	public MCountryOrigin findByIdCountryOrigin(long id) {
+		return countryOriginRepository.findOne(id);
 	}
 
 	@Override
@@ -93,7 +93,7 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public void deletePack(long id) throws CountryOrginNotFound {
+	public void deletePack(long id) throws CountryOriginNotFound {
 		packRepository.delete(id);		
 	}
 
@@ -103,7 +103,7 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public MPack updatePack(MPack pack) throws CountryOrginNotFound {		
+	public MPack updatePack(MPack pack) throws CountryOriginNotFound {		
 		return packRepository.save(pack);
 	}
 
@@ -118,7 +118,7 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public void deleteProduct(long id) throws CountryOrginNotFound {
+	public void deleteProduct(long id) throws CountryOriginNotFound {
 		productRepository.delete(id);		
 	}
 
@@ -128,7 +128,7 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public MProduct updateProduct(MProduct product) throws CountryOrginNotFound {		
+	public MProduct updateProduct(MProduct product) throws CountryOriginNotFound {		
 		return productRepository.save(product);
 	}
 

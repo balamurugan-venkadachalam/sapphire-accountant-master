@@ -1,0 +1,82 @@
+<!-- Begin page content -->
+<div class="container">
+	<div class="col-md-12">
+			    <div class="page-header">
+		            <h1>
+		                Country Orgin
+		            </h1>
+		        </div>
+		       	<button class="btn btn-success pull-right" ng-click="openCategoryForm(null)">
+                	<span class="glyphicon glyphicon-plus"></span> Create
+            	</button>
+	           <div class="table-responsive">
+	               <table id="mytable" class="table table-bordred table-striped">
+	                   <thead>
+	                   <th><input type="checkbox" id="checkall" /></th>
+	                   <th>Country Orgin ID</th>
+	                   <th>Country Orgin Name</th>
+	                   <th>Country Code</th>
+	                   <th>Is Active</th>
+	                   <th>Edit</th>
+	                   <th>Delete</th>
+	                   </thead>
+	                   <tbody>
+	
+	                   <tr ng-click="openCategoryForm(category)" ng-repeat = "category in categories">
+	                       <td><input type="checkbox" class="checkthis" /></td>
+	                       <td>{{category.id}}</td>
+	                       <td>{{category.categoryName}}</td>
+	                       <td>{{category.isActive}}</td>
+	                       <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+	                       <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+	                   </tr>
+	
+	                   </tbody>
+	
+	               </table>
+	
+	               <div class="clearfix"></div>
+	               <ul class="pagination pull-right">
+	                   <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+	                   <li class="active"><a href="#">1</a></li>
+	                   <li><a href="#">2</a></li>
+	                   <li><a href="#">3</a></li>
+	                   <li><a href="#">4</a></li>
+	                   <li><a href="#">5</a></li>
+	                   <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+	               </ul>
+	
+	           </div>
+	
+	</div>
+</div>
+
+<script type="text/ng-template" id="categoryForm.html">
+    <div>
+		<div class="modal-header">
+		<h3 class="modal-title">Category</h3>
+		</div>
+		<div class="modal-body">
+			<form>
+				<div class="form-group">
+					<label for="recipient-name" class="control-label">Category Id</label>
+					<input type="text" class="form-control" ng-model="category.id">
+				</div>
+				<div class="form-group">
+					<label for="recipient-name" class="control-label">Category Name</label>
+					<input type="text" class="form-control" ng-model="category.categoryName">
+				</div>
+				<div class="form-group">
+					<label for="message-text" class="control-label">Is Active
+					<input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="category.isActive">
+					</label>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"  ng-show="mode.update" ng-click="submit(category)">Save</button>
+			<button class="btn btn-primary"  ng-show="mode.create" ng-click="submit(category)">Create</button>
+			<button class="btn btn-warning"  ng-click="cancle()" >Cancel</button>
+		</div>
+    </div>            
+</script>

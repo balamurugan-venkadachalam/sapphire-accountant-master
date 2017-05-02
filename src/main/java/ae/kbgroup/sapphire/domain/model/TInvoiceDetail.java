@@ -46,7 +46,7 @@ public class TInvoiceDetail implements Serializable {
 	//bi-directional many-to-one association to MCountryOrgin
 	@ManyToOne
 	@JoinColumn(name="COUNTRY_ID")
-	private MCountryOrgin MCountryOrgin;
+	private MCountryOrigin MCountryOrgin;
 
 	//bi-directional many-to-one association to TInvoice
 	@ManyToOne
@@ -138,11 +138,11 @@ public class TInvoiceDetail implements Serializable {
 		this.weight = weight;
 	}
 
-	public MCountryOrgin getMCountryOrgin() {
+	public MCountryOrigin getMCountryOrgin() {
 		return this.MCountryOrgin;
 	}
 
-	public void setMCountryOrgin(MCountryOrgin MCountryOrgin) {
+	public void setMCountryOrgin(MCountryOrigin MCountryOrgin) {
 		this.MCountryOrgin = MCountryOrgin;
 	}
 

@@ -46,7 +46,7 @@ public class TImportDetail implements Serializable {
 	//bi-directional many-to-one association to MCountryOrgin
 	@ManyToOne
 	@JoinColumn(name="CNTRY_CODE")
-	private MCountryOrgin MCountryOrgin;
+	private MCountryOrigin MCountryOrgin;
 
 	//bi-directional many-to-one association to MPack
 	@ManyToOne
@@ -133,11 +133,11 @@ public class TImportDetail implements Serializable {
 		this.MCategory = MCategory;
 	}
 
-	public MCountryOrgin getMCountryOrgin() {
+	public MCountryOrigin getMCountryOrgin() {
 		return this.MCountryOrgin;
 	}
 
-	public void setMCountryOrgin(MCountryOrgin MCountryOrgin) {
+	public void setMCountryOrgin(MCountryOrigin MCountryOrgin) {
 		this.MCountryOrgin = MCountryOrgin;
 	}
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ae.kbgroup.sapphire.domain.model.MCategory;
-import ae.kbgroup.sapphire.domain.model.MCountryOrgin;
+import ae.kbgroup.sapphire.domain.model.MCountryOrigin;
 import ae.kbgroup.sapphire.domain.model.MPack;
 import ae.kbgroup.sapphire.service.AdminService;
 
@@ -38,18 +38,18 @@ public class AdminController {
 	}
 	
 	@GetMapping("/countryOrgines")
-	public List<MCountryOrgin> getCountryOrgins(){
-		return adminService.findAllCountryOrgin();
+	public List<MCountryOrigin> getCountryOrgins(){
+		return adminService.findAllCountryOrigin();
 	}
 	
 	@PostMapping("/countryOrgin")
-	public void saveCountryOrgin(@RequestBody MCountryOrgin countryOrgin){
-		adminService.createCountryOrgin(countryOrgin);
+	public void saveCountryOrgin(@RequestBody MCountryOrigin countryOrgin){
+		adminService.createCountryOrigin(countryOrgin);
 	}
 	
 	@PutMapping("/countryOrgin")
-	public void updateCountryOrgin(@RequestBody MCountryOrgin countryOrgin){
-		adminService.updateCountryOrgin(countryOrgin);
+	public void updateCountryOrgin(@RequestBody MCountryOrigin countryOrgin){
+		adminService.updateCountryOrigin(countryOrgin);
 	}
 	
 	@GetMapping("/packs")

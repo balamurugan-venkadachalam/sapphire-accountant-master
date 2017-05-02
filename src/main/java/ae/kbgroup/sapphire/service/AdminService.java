@@ -3,11 +3,11 @@ package ae.kbgroup.sapphire.service;
 import java.util.List;
 
 import ae.kbgroup.sapphire.domain.model.MCategory;
-import ae.kbgroup.sapphire.domain.model.MCountryOrgin;
+import ae.kbgroup.sapphire.domain.model.MCountryOrigin;
 import ae.kbgroup.sapphire.domain.model.MPack;
 import ae.kbgroup.sapphire.domain.model.MProduct;
 import ae.kbgroup.sapphire.exception.CategoryNotFound;
-import ae.kbgroup.sapphire.exception.CountryOrginNotFound;
+import ae.kbgroup.sapphire.exception.CountryOriginNotFound;
 
 public interface AdminService {
 
@@ -24,25 +24,25 @@ public interface AdminService {
 	
 	
 	// CountryOrgin
-	public MCountryOrgin createCountryOrgin(MCountryOrgin countryOrgin);
+	public MCountryOrigin createCountryOrigin(MCountryOrigin countryOrgin);
 
-	public void deleteCountryOrgin(long id) throws CountryOrginNotFound;
+	public void deleteCountryOrigin(long id) throws CountryOriginNotFound;
 
-	public List<MCountryOrgin> findAllCountryOrgin();
+	public List<MCountryOrigin> findAllCountryOrigin();
 
-	public MCountryOrgin updateCountryOrgin(MCountryOrgin countryOrgin) throws CountryOrginNotFound;
+	public MCountryOrigin updateCountryOrigin(MCountryOrigin countryOrgin) throws CountryOriginNotFound;
 
-	public MCountryOrgin findByIdCountryOrgin(long id);
+	public MCountryOrigin findByIdCountryOrigin(long id);
 	
 	
 	// Pack
 	public MPack createPack(MPack pack);
 
-	public void deletePack(long id) throws CountryOrginNotFound;
+	public void deletePack(long id) throws CountryOriginNotFound;
 
 	public List<MPack> findAllPack();
 
-	public MPack updatePack(MPack pack) throws CountryOrginNotFound;
+	public MPack updatePack(MPack pack) throws CountryOriginNotFound;
 
 	public MPack findByIdPack(long id);
 	
@@ -50,11 +50,11 @@ public interface AdminService {
 	// Product
 	public MProduct createProduct(MProduct product);
 
-	public void deleteProduct(long id) throws CountryOrginNotFound;
+	public void deleteProduct(long id) throws CountryOriginNotFound;
 
 	public List<MProduct> findAllProduct();
 
-	public MProduct updateProduct(MProduct product) throws CountryOrginNotFound;
+	public MProduct updateProduct(MProduct product) throws CountryOriginNotFound;
 
 	public MProduct findByIdProduct(long id);
 
