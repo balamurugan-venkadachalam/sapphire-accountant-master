@@ -61,7 +61,7 @@ authenticationModule.controller('CountryCtrl', [ 'CountryRequest','$scope',  'Me
          }
 	 };
 	 
-	 $scope.opencountryForm = function(country){
+	 $scope.openCountryForm = function(country){
          var modalInstance = $uibModal.open({
              templateUrl: 'countryForm.html',
              controller: countryFormctrl,
