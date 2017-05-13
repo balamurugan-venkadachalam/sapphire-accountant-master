@@ -122,9 +122,9 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		  http.csrf().disable()
           .authorizeRequests()
-          .antMatchers("/", "/app/**","/css/**","/js/**","/partials/public/**", "/partials/admin/menu/*").permitAll()
+          .antMatchers("/", "/app/**","/css/**","/js/**","/partials/public/**", "/partials/admin/menu/*" ).permitAll()
   		  .antMatchers("/service/user/**").hasRole("USER")
-  		  .antMatchers("/service/admin/**", "/partials/admin/**").hasRole("ADMIN")
+  		  .antMatchers("/service/admin/**", "/service/invMgmt/**","/partials/admin/**").hasRole("ADMIN")
           .antMatchers("/index.html").permitAll()          
           .anyRequest().authenticated()         
           .and()

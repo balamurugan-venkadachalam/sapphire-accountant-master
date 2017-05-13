@@ -7,9 +7,11 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  min-height: 500px;
 }
 .footer {
-  position: absolute;
+  position: relative;
+  margin-top:2em;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -18,6 +20,30 @@ body {
 }
 
 
+.fcontainer {
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #f5f5f5;
+}
+
+
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
+
+
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }

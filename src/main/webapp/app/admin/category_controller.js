@@ -94,6 +94,7 @@ authenticationModule.controller('CategoryCtrl', [ 'CategoryRequest','$scope',  '
 var categoryFormctrl= function($scope, $uibModalInstance, category, mode) {
     if (mode.create)
     	category = {isActive: 1};
+ 
     $scope.category = category;
     $scope.mode = mode;
     

@@ -39,7 +39,7 @@ authenticationModule.controller('PackCtrl', [ 'PackRequest','$scope',  'MessageH
              PackRequest.update(pack).then(
                      function (success) {
                     	 MessageHandler.addSuccess('Pack Updated Succesfuly');
-                    	 $scope.loadCategories();
+                    	 $scope.loadPacks();
                      },
                      MessageHandler.manageError);
          } catch (ex) {
@@ -53,7 +53,7 @@ authenticationModule.controller('PackCtrl', [ 'PackRequest','$scope',  'MessageH
              PackRequest.create(pack).then(
                      function (success) {
                     	 MessageHandler.addSuccess('Pack Created Succesfuly');
-                    	 $scope.loadCategories();
+                    	 $scope.loadPacks();
                      },
                      MessageHandler.manageError);
          } catch (ex) {

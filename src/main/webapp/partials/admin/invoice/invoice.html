@@ -1,0 +1,178 @@
+<!-- Begin page content -->
+<div class="container">
+	<div class="col-md-12">
+	    <div class="row">
+	        <div class="col-xs-12 heading">
+	            INVOICE
+	        </div>
+   		 </div>
+   		 
+   		<div class="row branding">
+	        <div class="col-xs-6">
+	            <div class="invoice-number-container">
+	                <label for="invoice-number">Invoice # {{invoice.invoiceNo}}</label>
+	            </div>
+	        </div>
+	        <div class="col-xs-6 logo-container">
+
+	        </div>
+	    </div>
+	    
+        <div class="row infos">
+	        <div class="col-xs-6">
+	            <div class="input-container"><input type="text" ng-model="invoice.customer.name"/></div>
+	            <div class="input-container"><input type="text" ng-model="invoice.customer.address1"/></div>
+	            <div class="input-container"><input type="text" ng-model="invoice.customer.address2"/></div>
+	        </div>
+	        <div class="col-xs-6 right">
+	            <div class="input-container"><input type="text" ng-model="invoice.company.name"/></div>
+	            <div class="input-container"><input type="text" ng-model="invoice.company.address1"/></div>
+	            <div class="input-container"><input type="text" ng-model="invoice.company.address2"/></div>
+
+	       </div>
+	    </div>
+	    
+	  <div class="items-table">
+        <div class="row header">
+            <div class="col-xs-2 input-ocontainer">
+                <div class="col-xs-5 input-ocontainer">S.NO</div>
+                <div class="col-xs-7 input-ocontainer">Items</div>
+            </div>
+            <div class="col-xs-4 input-ocontainer">
+                <div class="col-xs-4 input-ocontainer">HS Code</div>
+                <div class="col-xs-8 input-ocontainer">Description</div>
+            </div>
+            <div class="col-xs-2 input-ocontainer">
+                <div class="col-xs-4 input-ocontainer">COO</div>
+                <div class="col-xs-8 input-ocontainer">BOE/DEC.no</div>
+            </div>
+
+            <div class="col-xs-3 input-ocontainer">
+                <div class="col-xs-3 input-ocontainer">G.Weight</div>
+                <div class="col-xs-3 input-ocontainer">Pack</div>
+                <div class="col-xs-3 input-ocontainer">QTY</div>
+                <div class="col-xs-3 input-ocontainer">URate</div>
+            </div>
+
+
+
+            <!--<div class="col-xs-1">Cost {{currencySymbol}}</div>-->
+            <div class="col-xs-1 text-right input-ocontainer">Total</div>
+        </div>
+        <div class="row invoice-item" ng-repeat="item in invoice.items" ng-animate="'slide-down'">
+            <div class="col-xs-2 input-ocontainer">
+                <div class="col-xs-3 remove-item-container input-ocontainer">
+                    <a href ng-hide="printMode" ng-click="removeItem(item)" class="btn btn-danger">[X]</a>
+                </div>
+                <div class="col-xs-9 input-container input-ocontainer">
+                    <input ng-model="item.category" placeholder="category" />
+                </div>
+            </div>
+            <div class="col-xs-4 input-container input-ocontainer">
+                <div class="col-xs-3 input-container input-ocontainer">
+                    <input ng-model="item.hscode" placeholder="hscode" />
+                </div>
+                <div class="col-xs-9 input-container input-ocontainer">
+                    <input ng-model="item.description" placeholder="description" />
+                </div>
+            </div>
+            <div class="col-xs-2 input-container input-ocontainer">
+                <div class="col-xs-4 input-container input-ocontainer">
+                    <input ng-model="item.coo" placeholder="coo" />
+                </div>
+
+                <div class="col-xs-8 input-container input-ocontainer">
+                    <input ng-model="item.boe" placeholder="boe" />
+                </div>
+            </div>
+            <div class="col-xs-3 input-container input-ocontainer">
+                <div class="col-xs-3 input-container input-ocontainer">
+                    <input ng-model="item.weight" placeholder="weight" />
+                </div>
+                <div class="col-xs-3  nput-container input-ocontainer">
+                    <input ng-model="item.pack" placeholder="pack" />
+                </div>
+                <div class="col-xs-3 input-container input-ocontainer">
+                    <input ng-model="item.qty" value="1" size="4" ng-required ng-validate="integer" placeholder="Quantity" />
+                </div>
+                <div class="col-xs-3 input-container input-ocontainer">
+                    <input ng-model="item.cost" value="0.00" ng-required ng-validate="number" size="6" placeholder="Cost" />
+                </div>
+            </div>
+
+            <div class="col-xs-1 text-right input-container input-ocontainer">
+                {{item.cost * item.qty }}
+            </div>
+        </div>
+        <div class="row invoice-item">
+            <div class="col-xs-1 add-item-container" ng-hide="printMode">
+                <a class="btn btn-primary" href ng-click="addItemForm()" >[+]</a>
+            </div>
+			<div class="col-xs-11" ng-hide="printMode">
+              
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 text-right">Sub Total</div>
+            <div class="col-xs-2 text-right">{{invoiceSubTotal() | currency: currencySymbol}}</div>
+        </div>
+<!--    <div class="row">
+            <div class="col-xs-10 text-right">Tax(%): <input ng-model="invoice.tax" ng-validate="number" style="width:43px"></div>
+            <div class="col-xs-2 text-right">{{calculateTax() | currency: currencySymbol}}</div>
+        </div> -->
+        <div class="row">
+            <div class="col-xs-10 text-right">Grand Total:</div>
+            <div class="col-xs-2 text-right">{{calculateGrandTotal() | currency: currencySymbol}}</div>
+        </div>
+    </div>
+    
+	    
+    </div>
+	
+</div>
+
+
+<script type="text/ng-template" id="invoiceForm.html">
+    <div>
+		<div class="modal-header">
+		<h3 class="modal-title">Search Product</h3>
+		</div>
+		<div class="modal-body">
+			<form>
+				<div class="form-group">
+					<label for="recipient-name" class="control-label">Enter GRN </label>
+					<input type="text" class="form-control" ng-model="grnCode">
+				</div>
+
+			</form>
+
+			<button class="btn btn-primary"   ng-click="search()">Search</button>
+			<button class="btn btn-warning"  ng-click="cancle()" >Cancel</button>
+
+		</div>
+		<div class="modal-footer">
+				<div class="table-responsive">
+	               <table id="mytable" class="table table-bordred table-striped">
+	                   <thead>
+	                   <th>GRN ID</th>
+	                   <th>Product Name</th>
+	                   <th>Category Name</th>
+	                   <th>Stock</th>
+	                   </thead>
+	                   <tbody>
+	
+	                   <tr ng-click="submit(porder)" ng-repeat = "porder in purchaseOrders">
+	                       <td class="text-left">{{porder.grnCode}}</td>
+	                       <td class="text-left">{{porder.product.productName}}</td>
+	                       <td class="text-left">{{porder.category.categoryName}}</td>
+	                       <td class="text-left"></td>
+	                   </tr>
+					
+	                   </tbody>
+
+	               </table>
+	               <div class="clearfix"></div>	
+	           </div>
+		</div>
+    </div>            
+</script>

@@ -19,15 +19,20 @@
 
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <link href="css/lib/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  
+  
 
   <!-- Custom styles for this template -->
   <link href="css/lib/sticky-footer-navbar.css" rel="stylesheet">
   
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="js/lib/ie-emulation-modes-warning.js"></script>
+  
+  
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -55,11 +60,24 @@
 
 
 
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container">
     <p class="text-muted">Place sticky footer content here.</p>
   </div>
-</footer>
+</footer> -->
+
+<div class="fcontainer">
+    <hr />
+        <div class="text-center center-block">
+            <p class="txt-railway">- www.sapphireexim.net -</p>
+            <br />
+                <a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-3x social"></i></a>
+	            <a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-3x social"></i></a>
+	            <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social"></i></a>
+	            <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
+        </div>
+    <hr />
+</div>
 
 
 <!-- Bootstrap core JavaScript
@@ -78,7 +96,15 @@
 <script src="app/bower_components/angular-route/angular-route.js"></script>
 
 <script src="app/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="app/bower_components/angularUtils-pagination/dirPagination.js"></script>
+
+<script src="app/bower_components/angular-css/angular-css.js"></script>  
+
 <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+  
+
+
 
 
 <script src="app/app.js"></script>
@@ -96,6 +122,19 @@
 <script src="app/admin/country_controller.js"></script>
 <script src="app/admin/country_factory.js"></script>
 
+<script src="app/admin/product_controller.js"></script>
+<script src="app/admin/product_factory.js"></script>
+
+<script src="app/admin/import_detail_controller.js"></script>
+<script src="app/admin/import_detail_factory.js"></script>
+
+<script src="app/admin/customer_controller.js"></script>
+<script src="app/admin/customer_factory.js"></script>
+
+<script src="app/admin/supplier_controller.js"></script>
+<script src="app/admin/supplier_factory.js"></script>
+
+<script src="app/invoice/invoice_controller.js"></script>
 
 </body>
 </html>

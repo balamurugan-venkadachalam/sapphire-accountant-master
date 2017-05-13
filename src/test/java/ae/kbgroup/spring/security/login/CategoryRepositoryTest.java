@@ -18,7 +18,7 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 
 import ae.kbgroup.sapphire.config.spring.SpringRootConfig;
-import ae.kbgroup.sapphire.domain.model.MCategory;
+import ae.kbgroup.sapphire.domain.model.Category;
 import ae.kbgroup.sapphire.domain.repository.CategoryRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -42,7 +42,7 @@ public class CategoryRepositoryTest extends BaseTest{
 
 	@Test
 	public void testCategoryFindByName(){
-		List<MCategory> categories = categoryRepository.findByCategoryNameIgnoreCase("bear");
+		List<Category> categories = categoryRepository.findByCategoryNameIgnoreCase("bear");
 		
 		assertThat(categories.size(), is(equalTo(1)));
 	}
@@ -50,7 +50,7 @@ public class CategoryRepositoryTest extends BaseTest{
 	
 	@Test
 	public void testCategoryFindById(){
-		MCategory category = categoryRepository.findOne(101l);
+		Category category = categoryRepository.findOne(101l);
 		
 		assertThat(category.getCategoryName(), is(equalTo("Bear")));
 	}

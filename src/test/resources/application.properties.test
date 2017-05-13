@@ -10,3 +10,17 @@ hibernate.format_sql=true
 hibernate.hbm2ddl.auto=create-drop
 hibernate.ejb.naming_strategy=org.hibernate.cfg.ImprovedNamingStrategy
 hibernate.show_sql=false
+
+
+# Specify the DirectoryProvider to use (the Lucene Directory)
+spring.jpa.properties.hibernate.search.default.directory_provider = filesystem
+
+# Using the filesystem DirectoryProvider you also have to specify the default
+# base directory for all indexes (make sure that the application have write
+# permissions on such directory)
+spring.jpa.properties.hibernate.search.default.indexBase = /var/netgloo_blog/lucene/indexes/
+
+
+logging.level.root=ERROR
+logging.level.org.springframework.web=ERROR
+logging.level.org.hibernate=ERROR

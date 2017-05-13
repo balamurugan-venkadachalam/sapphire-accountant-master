@@ -1,6 +1,7 @@
 
 body > .ng-scope > .container {
     padding: 60px 15px 0;
+    min-height: 500px;
 }
 .container .text-muted {
     margin: 20px 0;
@@ -13,4 +14,109 @@ body > .ng-scope > .container {
 
 code {
     font-size: 80%;
+}
+
+.heading {
+    background-color:#357EBD;
+    color:#FFF;
+    margin-bottom:1em;
+    text-align:center;
+    line-height:2.5em;
+}
+
+
+.branding {
+	margin-top:1em;
+    padding-bottom:2em;
+    border-bottom:1px solid #ddd;
+}
+
+.infos .right {
+    text-align:right;
+}
+.infos .right input {
+    text-align:right;
+}
+.infos .input-container {
+    padding:1px 0;
+}
+
+.infos input{
+    width: 400px;
+}
+
+.infos {
+	margin-top: 1em;
+}
+
+
+
+.items-table .row {
+    border-bottom:1px solid #ddd;
+    line-height:3em;
+}
+.items-table .row:last-child {
+    border-bottom:none;
+    line-height:3em;
+}
+.items-table .row:nth-child(even) {
+    background:#f9f9f9;
+}
+.items-table input {
+    line-height:1.5em;
+}
+
+.header .row {
+    font-weight:bold;
+    border-bottom:1px solid #ddd;
+    border-top:1px solid #ddd;
+}
+
+ .invoice-item .input-zcontainer {
+    padding-right: 1px !important;
+    padding-left: 1px !important;
+}
+
+ .invoice-item  .input-ocontainer {
+    padding-right: 1px !important;
+    padding-left: 1px !important;
+}
+
+.add-item-containe .input-ocontainer {
+    padding-right: 1px !important;
+    padding-left: 1px !important;
+}
+
+.add-item-containe .input-zcontainer {
+    padding-right: 1px !important;
+    padding-left: 1px !important;
+}
+
+ .invoice-item input, textarea{
+    border: 1px solid #FFF;
+}
+
+.infos input, textarea{
+    border: 1px solid #FFF;
+}
+
+.invoice-item .btn {
+    padding: 4px 6px !important;
+}
+
+input:focus {
+    outline: 0;
+}
+
+input {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+
+.header.row {
+    font-weight:bold;
+    border-bottom:1px solid #ddd;
+    border-top:1px solid #ddd;
+    margin-top: 0.5em;    
 }

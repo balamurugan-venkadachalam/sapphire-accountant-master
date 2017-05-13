@@ -17,10 +17,17 @@ var app = angular.module('myApp', [
     , 'myApp.login'
     , 'myApp.category'
     , 'myApp.pack'
+    , 'myApp.product'
     , 'myApp.country'
+    , 'myApp.supplier'
+    , 'myApp.imgDet'
+    , 'myApp.invoice'
+    , 'myApp.customer'
     , 'messageHandler.module'
     , 'myApp.services'
     , 'ui.bootstrap'
+    , 'angularCSS'
+    , 'angularUtils.directives.dirPagination'
 ]);
 
 
@@ -59,10 +66,10 @@ app.run(function($rootScope, $cookieStore, $location) {
 	
 	 $rootScope.$on('$routeChangeStart', function (event) {
 		 var user = $rootScope.user;
-		 if (user === undefined) {
+		/* if (user === undefined) {
 		        $location.path("/login");
 		        $rootScope.refPage = '#/login';
-		}
+		}*/
 	 });
 	
 	
@@ -91,4 +98,20 @@ app.directive('pversion', function(){
 		restrict : "E",
 		template :"1.0"
 	};	
+});
+
+app.directive('restrictTo', function() {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            var re = RegExp(attrs.restrictTo);
+            var exclude = /Backspace|Enter|Tab|Delete|Del|ArrowUp|Up|ArrowDown|Down|ArrowLeft|Left|ArrowRight|Right/;
+
+            element[0].addEventListener('keydown', function(event) {
+                if (!exclude.test(event.key) && !re.test(event.key)) {
+                    event.preventDefault();
+                }
+            });
+        }
+    }
 });

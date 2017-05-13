@@ -2,8 +2,8 @@ package ae.kbgroup.sapphire.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import ae.kbgroup.sapphire.domain.model.TInventoryMaster;
+import ae.kbgroup.sapphire.domain.model.InventoryMaster;
 
-public interface InventoryMasterRepository extends JpaRepository<TInventoryMaster, Long>{
+public interface InventoryMasterRepository extends JpaRepository<InventoryMaster, Long>{
 
 }

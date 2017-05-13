@@ -2,8 +2,8 @@ package ae.kbgroup.sapphire.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import ae.kbgroup.sapphire.domain.model.MPack;
+import ae.kbgroup.sapphire.domain.model.Pack;
 
-public interface PackRepository extends JpaRepository<MPack, Long>{
+public interface PackRepository extends JpaRepository<Pack, Long>{
 
 }

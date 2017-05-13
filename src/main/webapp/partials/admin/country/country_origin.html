@@ -9,10 +9,15 @@
 		       	<button class="btn btn-success pull-right" ng-click="openCountryForm(null)">
                 	<span class="glyphicon glyphicon-plus"></span> Create
             	</button>
+           		<form class="form-inline">
+					<div class="form-group">
+						<label>Search</label>
+						<input type="text" ng-model="search" class="form-control" placeholder="Search">
+					</div>
+				</form>
 	           <div class="table-responsive">
 	               <table id="mytable" class="table table-bordred table-striped">
 	                   <thead>
-	                   <th><input type="checkbox" id="checkall" /></th>
 	                   <th>Country Origin ID</th>
 	                   <th>Country Origin Name</th>
 	                   <th>Country Code</th>
@@ -22,7 +27,7 @@
 	                   </thead>
 	                   <tbody>
 	
-	                   <tr ng-click="openCountryForm(country)" ng-repeat = "country in countrys">
+	                   <tr ng-click="openCountryForm(country)" dir-paginate = "country in countrys | filter:search | itemsPerPage:5">
 	                       <td>{{country.id}}</td>
 	                       <td>{{country.cntryDesc}}</td>
 	                       <td>{{country.cntryCode}}</td>
@@ -36,18 +41,12 @@
 	               </table>
 	
 	               <div class="clearfix"></div>
-	               <ul class="pagination pull-right">
-	                   <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-	                   <li class="active"><a href="#">1</a></li>
-	                   <li><a href="#">2</a></li>
-	                   <li><a href="#">3</a></li>
-	                   <li><a href="#">4</a></li>
-	                   <li><a href="#">5</a></li>
-	                   <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-	               </ul>
-	
+	               	
 	           </div>
-	
+				
+				<div class="text-center">
+					<dir-pagination-controls boundary-links="true" ></dir-pagination-controls>
+				</div>
 	</div>
 </div>
 

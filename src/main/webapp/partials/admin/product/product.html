@@ -1,0 +1,95 @@
+<!-- Begin page content -->
+<div class="container">
+	<div class="col-md-12">
+			    <div class="page-header">
+		            <h1>
+		                Product
+		            </h1>
+		        </div>
+		       	<button class="btn btn-success pull-right" ng-click="openProductForm(null)">
+                	<span class="glyphicon glyphicon-plus"></span> Create
+            	</button>
+				<form class="form-inline">
+					<div class="form-group">
+						<label>Search</label>
+						<input type="text" ng-model="search" class="form-control" placeholder="Search">
+					</div>
+				</form>
+				
+       				
+	           <div class="table-responsive">
+	               <table id="mytable" class="table table-bordred table-striped">
+	                   <thead>
+	                   <th>Product ID</th>
+	                   <th>Product Name</th>
+	                   <th>Category Name</th>
+	                   <th>Remarks</th>
+	                   <th>Is Active</th>
+	                   <th>Edit</th>
+	                   <th>Delete</th>
+	                   </thead>
+	                   <tbody>
+	
+	                   <tr ng-click="openProductForm(product)" dir-paginate = "product in products | filter:search | itemsPerPage:5">
+	                       <td>{{product.id}}</td>
+	                       <td>{{product.productName}}</td>
+	                       <td>{{product.category.categoryName}}</td>
+	                       <td>{{product.customField1}}</td>
+	                       <td>{{product.isActive}}</td>
+	                       <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+	                       <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+	                   </tr>
+					
+	                   </tbody>
+						<!-- <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls> -->
+	               </table>
+	               <div class="clearfix"></div>		
+	
+	           </div>
+	           
+				<div class="text-center">
+					<dir-pagination-controls boundary-links="true" ></dir-pagination-controls>
+				</div>
+	           
+	
+	</div>
+</div>
+
+<script type="text/ng-template" id="productForm.html">
+    <div>
+		<div class="modal-header">
+		<h3 class="modal-title">Product</h3>
+		</div>
+		<div class="modal-body">
+			<form>
+				
+				<div class="form-group">
+					<label for="recipient-name" class="control-label">Product Name</label>
+					<input type="text" class="form-control" ng-model="product.productName">
+				</div>
+				<div class="form-group">
+					<label for="recipient-name" class="control-label">Category Name</label>
+					<select class="form-control" ng-model="product.category.id" 
+        					ng-options="item.id as item.categoryName for item in categories">
+    					<option value="">Select Category</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="recipient-name" class="control-label">Remarks</label>
+					<input type="text" class="form-control" ng-model="product.customField1">
+				</div>
+				<div class="form-group">
+					<label for="message-text" class="control-label">Is Active
+					<input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="product.isActive">
+					</label>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"  ng-show="mode.update" ng-click="submit(product)">Save</button>
+			<button class="btn btn-primary"  ng-show="mode.create" ng-click="submit(product)">Create</button>
+			<button class="btn btn-warning"  ng-click="cancle()" >Cancel</button>
+		</div>
+    </div>            
+</script>
+

@@ -2,60 +2,86 @@ package ae.kbgroup.sapphire.service;
 
 import java.util.List;
 
-import ae.kbgroup.sapphire.domain.model.MCategory;
-import ae.kbgroup.sapphire.domain.model.MCountryOrigin;
-import ae.kbgroup.sapphire.domain.model.MPack;
-import ae.kbgroup.sapphire.domain.model.MProduct;
-import ae.kbgroup.sapphire.exception.CategoryNotFound;
-import ae.kbgroup.sapphire.exception.CountryOriginNotFound;
+import ae.kbgroup.sapphire.domain.model.Category;
+import ae.kbgroup.sapphire.domain.model.Country;
+import ae.kbgroup.sapphire.domain.model.Pack;
+import ae.kbgroup.sapphire.domain.model.Product;
+import ae.kbgroup.sapphire.domain.model.SupplierDetail;
+import ae.kbgroup.sapphire.domain.model.CustomerDetail;
+import ae.kbgroup.sapphire.exception.CategoryNotFoundException;
+import ae.kbgroup.sapphire.exception.CountryOriginNotFoundException;
+import ae.kbgroup.sapphire.exception.CustomerNotFoundException;
 
 public interface AdminService {
 
 	// Category
-	public MCategory createCategory(MCategory category);
+	public Category createCategory(Category category);
 
-	public void deleteCategory(long id) throws CategoryNotFound;
+	public void deleteCategory(long id) throws CategoryNotFoundException;
 
-	public List<MCategory> findAllCategory();
+	public List<Category> findAllCategory();
 
-	public MCategory updateCategory(MCategory category) throws CategoryNotFound;
+	public Category updateCategory(Category category) throws CategoryNotFoundException;
 
-	public MCategory findByIdCategory(long id);
+	public Category findByIdCategory(long id);
 	
 	
 	// CountryOrgin
-	public MCountryOrigin createCountryOrigin(MCountryOrigin countryOrgin);
+	public Country createCountryOrigin(Country country);
 
-	public void deleteCountryOrigin(long id) throws CountryOriginNotFound;
+	public void deleteCountryOrigin(long id) throws CountryOriginNotFoundException;
 
-	public List<MCountryOrigin> findAllCountryOrigin();
+	public List<Country> findAllCountryOrigin();
 
-	public MCountryOrigin updateCountryOrigin(MCountryOrigin countryOrgin) throws CountryOriginNotFound;
+	public Country updateCountryOrigin(Country country) throws CountryOriginNotFoundException;
 
-	public MCountryOrigin findByIdCountryOrigin(long id);
+	public Country findByIdCountryOrigin(long id);
 	
 	
 	// Pack
-	public MPack createPack(MPack pack);
+	public Pack createPack(Pack pack);
 
-	public void deletePack(long id) throws CountryOriginNotFound;
+	public void deletePack(long id) throws CountryOriginNotFoundException;
 
-	public List<MPack> findAllPack();
+	public List<Pack> findAllPack();
 
-	public MPack updatePack(MPack pack) throws CountryOriginNotFound;
+	public Pack updatePack(Pack pack) throws CountryOriginNotFoundException;
 
-	public MPack findByIdPack(long id);
+	public Pack findByIdPack(long id);
 	
 
 	// Product
-	public MProduct createProduct(MProduct product);
+	public Product createProduct(Product product);
 
-	public void deleteProduct(long id) throws CountryOriginNotFound;
+	public void deleteProduct(long id) throws CountryOriginNotFoundException;
 
-	public List<MProduct> findAllProduct();
+	public List<Product> findAllProduct();
 
-	public MProduct updateProduct(MProduct product) throws CountryOriginNotFound;
+	public Product updateProduct(Product product) throws CountryOriginNotFoundException;
 
-	public MProduct findByIdProduct(long id);
+	public Product findByIdProduct(long id);
+	
+	// Customer
+	public CustomerDetail createCustomer(CustomerDetail customer);
+
+	public void deleteCustomer(long id) throws CustomerNotFoundException;
+
+	public List<CustomerDetail> findAllCustomer();
+
+	public CustomerDetail updateCustomer(CustomerDetail customer) throws CustomerNotFoundException;
+
+	public CustomerDetail findByIdCustomer(long id);
+	
+	
+
+	public SupplierDetail createSupplier(SupplierDetail supplier) ;
+
+	public void deleteSupplier(long id) throws CustomerNotFoundException ;
+
+	public List<SupplierDetail> findAllSupplier();
+
+	public SupplierDetail updateSupplier(SupplierDetail supplier) throws CustomerNotFoundException ;
+
+	public SupplierDetail findByIdSupplier(long id) ;
 
 }

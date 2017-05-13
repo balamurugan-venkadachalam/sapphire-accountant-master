@@ -39,7 +39,7 @@ authenticationModule.controller('CountryCtrl', [ 'CountryRequest','$scope',  'Me
              CountryRequest.update(country).then(
                      function (success) {
                     	 MessageHandler.addSuccess('Country Updated Succesfuly');
-                    	 $scope.loadCategories();
+                    	 $scope.loadCountrys();
                      },
                      MessageHandler.manageError);
          } catch (ex) {
@@ -53,7 +53,7 @@ authenticationModule.controller('CountryCtrl', [ 'CountryRequest','$scope',  'Me
              CountryRequest.create(country).then(
                      function (success) {
                     	 MessageHandler.addSuccess('Country Created Succesfuly');
-                    	 $scope.loadCategories();
+                    	 $scope.loadCountrys();
                      },
                      MessageHandler.manageError);
          } catch (ex) {

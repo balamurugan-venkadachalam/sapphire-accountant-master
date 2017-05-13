@@ -1,0 +1,159 @@
+<!-- Begin page content -->
+<div class="container">
+    <div class="col-sm-12">
+        <div class="page-header">
+            <h1>
+                Inbound
+            </h1>
+        </div>
+        <div ng-include src="'partials/public/message-include.html'"></div>
+        <form class="form-horizontal" role="form">
+		 <div class="col-sm-6">
+
+            <div class="form-group">
+               <label for="grdId" class="col-sm-3 control-label">
+                    GRN ID
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="importDetail.grnCode" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="category" class="col-sm-3 control-label">
+                    Cateogy
+                </label>
+                <div class="col-sm-9">
+                    <select class="form-control" ng-model="importDetail.category.id" 
+        					ng-options="item.id as item.categoryName for item in categories" required="required">
+    					<option value="">Select Category</option>
+					</select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="product" class="col-sm-3 control-label">
+                    Product
+                </label>
+                <div class="col-sm-9">
+                    <select class="form-control" ng-model="importDetail.product.id" 
+        					ng-options="item.id as item.productName for item in products" required="required">
+    					<option value="">Select Product</option>
+					</select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="coo" class="col-sm-3 control-label">
+                    Country Of Origin
+                </label>
+                <div class="col-sm-9">
+
+                    <select class="form-control" ng-model="importDetail.country.id" 
+        					ng-options="item.id as item.cntryDesc for item in countrys" required="required">
+    					<option value="">Select Country</option>
+					</select>
+                </div>
+            </div>
+            
+           <div class="form-group">
+                <label for="pack" class="col-sm-3 control-label">
+                    Package Detail
+                </label>
+                <div class="col-sm-9">
+           			<select class="form-control" ng-model="importDetail.pack.id" 
+        					ng-options="item.id as item.packName for item in packs" required="required">
+    					<option value="">Select Package</option>
+					</select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="pack" class="col-sm-3 control-label">
+                    Supplier
+                </label>
+                <div class="col-sm-9">
+           			<select class="form-control" ng-model="importDetail.supplier.id" 
+        					ng-options="item.id as item.customerName for item in suppliers" required="required">
+    					<option value="">Select Supplier</option>
+					</select>
+                </div>
+            </div>
+            
+       </div>
+       <div class="col-sm-6">
+       
+            <div class="form-group">
+                <label for="pieces" class="col-sm-3 control-label">
+                    Pieces
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="importDetail.packPieces" restrict-to="[0-9]" required="required"  ng-keyup="calUnitPrice()">
+
+                </div>
+            </div>
+            
+			<div class="form-group">
+                <label for="unitPrice" class="col-sm-3 control-label">
+                    Price
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="importDetail.price" restrict-to="[0-9]" required="required" ng-keyup="calUnitPrice()">
+                </div>
+            </div>
+       
+            <div class="form-group">
+                <label for="unitPrice" class="col-sm-3 control-label">
+                    Unit Price
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="importDetail.unitPrice" restrict-to="[0-9]" required="required">
+                </div>
+            </div>
+            
+			<div class="form-group">
+                <label for="unitPrice" class="col-sm-3 control-label">
+                    Unit Selling Price
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="importDetail.unitSellingPrice" restrict-to="[0-9]" required="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="weight" class="col-sm-3 control-label">
+                    Weight
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="importDetail.weight" restrict-to="[0-9]" required="required" ng-keyup="calUnitWeight()">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="weight" class="col-sm-3 control-label">
+                    Unit Weight
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="importDetail.pieceWeight" restrict-to="[0-9]" required="required">
+                </div>
+            </div>
+            
+             <div class="form-group">
+                <label for="weight" class="col-sm-3 control-label">
+                    Remarks
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="importDetail.remarks" size="75" required="required">
+                </div>
+            </div>
+	</div>
+	<div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-offset-5 col-sm-10">
+
+					<button class="btn btn-primary"  ng-click="createImportDetail(importDetail)">Create</button>
+					<button class="btn btn-warning"  ng-click="cancle()" >Cancel</button>
+                </div>
+            </div>
+    </div>
+        </form>
+    </div>
+
+</div>
