@@ -17,9 +17,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * Created by karthikeyan.mani on 3/24/2017.
-**/
+
 @Configuration
 @EnableJpaRepositories(basePackages = "ae.kbgroup.sapphire.domain.repository", entityManagerFactoryRef = "entityMangerFactory",transactionManagerRef = "transactionManager")
 @PropertySource(value = { "classpath:application.properties.test" })
