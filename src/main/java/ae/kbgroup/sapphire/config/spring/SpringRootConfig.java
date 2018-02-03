@@ -11,9 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-/**
- * Created by karthikeyan.mani on 3/24/2017.
- */
+
 @Configuration
 @EnableTransactionManagement
 @ComponentScan(basePackages = { "ae.kbgroup.sapphire.web", "ae.kbgroup.sapphire.security.config","ae.kbgroup.sapphire.security", "ae.kbgroup.sapphire.service.impl" })
