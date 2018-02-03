@@ -8,3 +8,4 @@ Tech Stack
 6) Angular Js
 7) Bootstrap
 8) MySql
+9) Gradle
