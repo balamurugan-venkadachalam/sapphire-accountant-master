@@ -7,10 +7,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import ae.kbgroup.sapphire.security.config.LoginSecurityConfig;
 
-/**
- * Created by karthikeyan.mani on 3/24/2017.
- * 
- */
+
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = {"ae.kbgroup.sapphire.web.rest"})
